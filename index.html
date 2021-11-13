@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- font awesome -> while using icons (necessary link) -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- linking css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- linking js file -->
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- menu bar -->
+    <div class="menu_container">
+        <!-- new, open, save document -->
+        <div class="new_open_save_container">
+            <div class="new_icon">
+                <i class="fas fa-file"></i>
+            </div>
+
+            <div class="open_icon">
+                <i class="fas fa-envelope-open"></i>
+            </div>
+
+            <div class="save_icon">
+                <i class="fas fa-save"></i>
+            </div>
+        </div>
+
+        <!-- font type selection -->
+        <div class="fontType_container">
+            <select class="font_type">
+                <option value="Courier New">Courier New</option>
+                <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Georgia">Georgia</option>
+            </select>
+        </div>
+
+        <!-- font size selection -->
+        <div class="fontSize_container">
+            <select class="font_size">
+                <option value="12">12</option>
+                <option value="16">16</option>
+                <option value="20">20</option>
+                <option value="24">24</option>
+            </select>
+        </div>
+
+        <!-- font style selection -->
+        <div class="fontStyle_container">
+            <div class="bold_icon">
+                <i class="fas fa-bold"></i>
+            </div>
+
+            <div class="underline_icon">
+                <i class="fas fa-underline"></i>
+            </div>
+
+            <div class="italic_icon">
+                <i class="fas fa-italic"></i>
+            </div>
+        </div>
+
+        <!-- selecting alignment of text -->
+        <div class="textAlignment_container">
+            <div class="rightAlign_icon">
+                <i class="fas fa-align-right"></i>
+            </div>
+
+            <div class="centerAlign_icon">
+                <i class="fas fa-align-center"></i>
+            </div>
+
+            <div class="justifyAlign_icon">
+                <i class="fas fa-align-justify"></i>
+            </div>
+
+            <div class="leftAlign_icon">
+                <i class="fas fa-align-left"></i>
+            </div>
+        </div>
+
+        <!-- coloring text and background -->
+        <div class="colorFill_container">
+            <div class="textColor_icon">
+                <i class="fas fa-tint"></i>
+            </div>
+
+            <div class="backgroundColor_icon">
+                <i class="fas fa-fill-drip"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- formula and address bar -->
+    <div class="formula_container">
+        <!-- address box -->
+        <div class="address_box">
+            <input type="text" class="address">
+        </div>
+
+        <div class="fx_image">
+            <img src="fx.png">
+        </div>
+
+        <!-- formula box -->
+        <div class="formula_box">
+            <input type="text" class="formula" placeholder="formula">
+        </div>
+    </div>
+
+    <!-- grid of cells -->
+    <div class="grid_container">
+        <div class="corner_box"></div>
+        <div class="top_row"></div>
+        <div class="left_col"></div>
+
+        <!-- input grid -->
+        <div class="grid_itself"></div>
+    </div>
+
+    <!-- sheet selection -->
+    <div class="sheet_container"></div>
+</body>
+
+</html>
