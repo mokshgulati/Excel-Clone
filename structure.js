@@ -1,7 +1,9 @@
+// elements
 let alphabeticHeadingRow = document.querySelector(".alphabetic_heading_row");
 let leftCol = document.querySelector(".left_col");
 let gridItself = document.querySelector(".grid_itself");
 
+// alphabetic head row
 for (let i = 1; i <= 26; i++) {
     let div = document.createElement("div");
     div.setAttribute("class", "alphabetic_cell");
@@ -9,19 +11,24 @@ for (let i = 1; i <= 26; i++) {
     alphabeticHeadingRow.appendChild(div);
 }
 
-for(let i=1;i<=100;i++){
+// numbered head col
+for (let i = 1; i <= 100; i++) {
     let div = document.createElement("div");
     div.setAttribute("class", "numbering_cell");
     div.textContent = i;
     leftCol.appendChild(div);
 }
 
-for(let i=1;i<=100;i++){
+// grid cells
+for (let i = 1; i <= 100; i++) {
     let div = document.createElement("div");
     div.setAttribute("class", "cell_row");
-    for(let j=1;j<=26;j++){
+    for (let j = 1; j <= 26; j++) {
         let cell = document.createElement("div");
         cell.setAttribute("class", "proper_cell");
+        cell.setAttribute("contentEditable", "true");
+        cell.setAttribute("rId", i);
+        cell.setAttribute("cId", j);
         div.appendChild(cell);
     }
     gridItself.appendChild(div);

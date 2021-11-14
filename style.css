@@ -37,7 +37,7 @@ body {
     padding-right: 1.2rem;
 }
 
-.fontType_container {
+.fontFamily_container {
     border-right: 1px solid gray;
 }
 
@@ -82,7 +82,7 @@ body {
     border: none;
 }
 
-.font_type {
+.font_family {
     outline: none;
     border: none;
 }
@@ -187,6 +187,7 @@ body {
     width: 5rem;
     border-bottom: 0.02px solid rgb(160, 158, 158);
     border-right: 0.02px solid rgb(160, 158, 158);
+    outline-color:green;
 }
 
 /************************************************************************************************/
@@ -194,4 +195,10 @@ body {
 .sheet_container {
     height: 2.5rem;
     background-color: rgb(141, 141, 141);
+}
+
+/************************************************************************************************/
+
+.open_file {
+    display: none;
 }

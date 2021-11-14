@@ -25,16 +25,17 @@
 
             <div class="open_icon">
                 <i class="fas fa-envelope-open"></i>
+                <input type="file" class="open_file" multiple>
             </div>
-
+            
             <div class="save_icon">
                 <i class="fas fa-save"></i>
             </div>
         </div>
 
         <!-- font type selection -->
-        <div class="fontType_container">
-            <select class="font_type">
+        <div class="fontFamily_container">
+            <select class="font_family">
                 <option value="Courier New">Courier New</option>
                 <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
                 <option value="Trebuchet MS">Trebuchet MS</option>
@@ -90,10 +91,12 @@
         <div class="colorFill_container">
             <div class="textColor_icon">
                 <i class="fas fa-tint"></i>
+                <input type="color" class="text_color" style="display: none">
             </div>
 
             <div class="backgroundColor_icon">
                 <i class="fas fa-fill-drip"></i>
+                <input type="color" class="bg_color" style="display: none">
             </div>
         </div>
     </div>
@@ -132,7 +135,9 @@
     <div class="sheet_container"></div>
 
     <!-- linking js file -->
-    <script src="script.js"></script>
+    <script src="structure.js"></script>
+    <script src="database.js"></script>
+    <script src="newopensave.js"></script>
 </body>
 
 </html>
