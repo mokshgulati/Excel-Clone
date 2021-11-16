@@ -5,6 +5,17 @@ let saveIcon = document.querySelector(".save_icon");
 //  it's the input element that takes files as input
 let openFile = document.querySelector(".open_file");
 
+// creates a new empty document of excel
+newIcon.addEventListener("click", function () {
+    // seting database to empty
+    db = [];
+    // taking db to its initial state
+    initDB();
+
+    // map UI -> according to db
+    setUI();
+})
+
 // click -> to download a json file of the database
 saveIcon.addEventListener("click", function (e) {
     // encodes the data of the database by converting into first json string and then into utf-8 sequences
@@ -50,7 +61,7 @@ function setUI(){
         for(let j=1;j<=26;j++){
             let cellObj = db[i][j];
             let cellToBeChanged = document.querySelector(`.proper_cell[rId='${i}'][cId='${i}']`);
-
+            // cell properties
             cellToBeChanged.innerText = cellObj.value;
             cellToBeChanged.style.color = cellObj.color;
             cellToBeChanged.style.backgroundColor = cellObj.bgColor;

@@ -65,7 +65,8 @@ body {
 
 .selected {
     box-shadow : 2px 2px 13px #b8b8b8;
-    border: 1px solid #2f3542;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 .fas {
