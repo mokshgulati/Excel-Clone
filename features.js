@@ -17,19 +17,43 @@ for (let i = 0; i < cell.length; i++) {
         // converting rId, cId into address format and display on the address bar
         address.value = String.fromCharCode(64 + cId) + rId;
 
-        // *********** 2-way binding ************
+        // ****************** 2-way binding **********************
+
         // menu styling (bring from database to the UI)
         let cellObj = db[rId][cId];
 
+        // font sizing
+        let fontSizeValue = cellObj.fontSize;
+        fontSize.value = fontSizeValue;
+
         // font styling
-        if(cellObj.bold){
+        // resetting the ground =>
+        boldIcon.classList.remove("selected");
+        italicIcon.classList.remove("selected");
+        underlineIcon.classList.remove("selected");
+        // making changes for that specific cell according to db =>
+        if (cellObj.bold == true) {
             boldIcon.classList.add("selected");
         }
-        if(cellObj.italic){
+        if (cellObj.italic == true) {
             italicIcon.classList.add("selected");
         }
-        if(cellObj.underline){
+        if (cellObj.underline == true) {
             underlineIcon.classList.add("selected");
+        }
+
+        // text alignment
+        // resetting the ground =>
+        let alignmentArr = textAlignmentToolBox.children;
+        for (let i = 0; i < alignmentArr.length; i++) {
+            alignmentArr[i].classList.remove("selected");
+        }
+        // making changes for that specific cell according to db =>
+        for (let i = 0; i < alignmentArr.length; i++) {
+            let alignment = alignmentArr[i].classList[1];
+            if (cellObj.textAlign == alignment) {
+                alignmentArr[i].classList.add("selected");
+            }
         }
 
         // formula display

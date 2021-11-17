@@ -39,7 +39,7 @@ bgColorIcon.addEventListener("click", (e) => {
 
 // after choosing color for cell background (from color input box)
 bgColor.addEventListener("change", (e) => {
-    let colorValue = textColor.value;
+    let colorValue = bgColor.value;
     let addressValue = address.value;
 
     // selected cell address (rId, cId)
@@ -71,7 +71,7 @@ boldIcon.addEventListener("click", function (e) {
     // database of that cell
     let cellObj = db[rId][cId];
 
-    if (cellObj.bold) {
+    if (cellObj.bold == true) {
         // change into database
         cellObj.bold = "false";
         // change icon appereance
@@ -95,7 +95,7 @@ italicIcon.addEventListener("click", function (e) {
     // database of that cell
     let cellObj = db[rId][cId];
 
-    if (cellObj.italic) {
+    if (cellObj.italic == true) {
         // change into database
         cellObj.italic = "false";
         // change icon appereance
@@ -119,7 +119,7 @@ underlineIcon.addEventListener("click", function (e) {
     // database of that cell
     let cellObj = db[rId][cId];
 
-    if (cellObj.underline) {
+    if (cellObj.underline == true) {
         // change into database
         cellObj.underline = "false";
         // change icon appereance

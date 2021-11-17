@@ -54,8 +54,7 @@ openFile.addEventListener("change", function (e) {
     })
 })
 
-// sets all the properties on the UI with matching rId and cId
-// from db -> UI
+// sets all the properties on the UI with matching rId and cId (from db -> UI)
 function setUI(){
     for(let i=1;i<=100;i++){
         for(let j=1;j<=26;j++){

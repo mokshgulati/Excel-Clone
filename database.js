@@ -10,13 +10,13 @@ function initDB(){
         for(let j=0;j<=26;j++){
             let cellObj = {
                 fontFamily : "Courier New",
-                fontSize : "12",
+                fontSize : 12,
                 textAlign : "center",
                 color : "black",
                 bgColor : "white",
-                italic : "false",
-                underline : "false",
-                bold : "false",
+                italic : false,
+                underline : false,
+                bold : false,
                 value : "",
                 formula : "",
                 children : []
