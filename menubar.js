@@ -47,7 +47,7 @@ bgColor.addEventListener("change", (e) => {
 
     // change -> on UI
     let cellUnderConsideration = document.querySelector(`.proper_cell[rId='${rId}'][cId='${cId}']`);
-    cellUnderConsideration.style.backgroundcolor = colorValue;
+    cellUnderConsideration.style.backgroundColor = colorValue;
 
     // change -> in Database
     db[rId][cId].bgColor = colorValue;
@@ -73,13 +73,13 @@ boldIcon.addEventListener("click", function (e) {
 
     if (cellObj.bold == true) {
         // change into database
-        cellObj.bold = "false";
+        cellObj.bold = false;
         // change icon appereance
         boldIcon.classList.remove("selected");
         // bring change to UI
         cellUnderConsideration.style.fontWeight = "normal";
     } else {
-        cellObj.bold = "true";
+        cellObj.bold = true;
         boldIcon.classList.add("selected");
         cellUnderConsideration.style.fontWeight = "bold";
     }
@@ -97,13 +97,13 @@ italicIcon.addEventListener("click", function (e) {
 
     if (cellObj.italic == true) {
         // change into database
-        cellObj.italic = "false";
+        cellObj.italic = false;
         // change icon appereance
         italicIcon.classList.remove("selected");
         // bring change to UI
         cellUnderConsideration.style.fontStyle = "italic";
     } else {
-        cellObj.italic = "true";
+        cellObj.italic = true;
         italicIcon.classList.add("selected");
         cellUnderConsideration.style.fontStyle = "italic";
     }
@@ -121,13 +121,13 @@ underlineIcon.addEventListener("click", function (e) {
 
     if (cellObj.underline == true) {
         // change into database
-        cellObj.underline = "false";
+        cellObj.underline = false;
         // change icon appereance
         underlineIcon.classList.remove("selected");
         // bring change to UI
         cellUnderConsideration.style.textDecoration = "none";
     } else {
-        cellObj.underline = "true";
+        cellObj.underline = true;
         underlineIcon.classList.add("selected");
         cellUnderConsideration.style.textDecoration = "underline";
     }
@@ -176,7 +176,7 @@ fontFamily.addEventListener("change", (e) => {
     let cellObj = db[rId][cId];
 
     // bring change to UI
-    cellUnderConsideration.style.fontFamily = fontFamilyValue + "px";
+    cellUnderConsideration.style.fontFamily = fontFamilyValue;
     // change into database
     cellObj.fontFamily = fontFamilyValue;
 })
@@ -192,20 +192,20 @@ textAlignmentToolBox.addEventListener("click", function (e) {
     // alignment icon clicked
     let textAlign = e.target;
 
-    if(textAlign !== textAlignmentToolBox){
+    if (textAlign != textAlignmentToolBox) {
         // showing which icon is selected
         let alignmentArr = textAlignmentToolBox.children;
-        for(let i=0;i<alignmentArr.length;i++){
+        for (let i = 0; i < alignmentArr.length; i++) {
             alignmentArr[i].classList.remove("selected");
         }
         textAlign.classList.add("selected");
 
         // type of alignment
-        let alignment = textAlign.classList[1];
-        
+        let alignment = textAlign.classList[3];
+
         // extracting rId, cId from address
         let addressValue = address.value;
-        let {rId,cId} = getRidCidFromAddress(addressValue);
+        let { rId, cId } = getRidCidFromAddress(addressValue);
 
         // change on UI (cell)
         let cellUnderConsideration = document.querySelector(`.proper_cell[rId='${rId}'][cId='${cId}']`);

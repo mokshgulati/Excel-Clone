@@ -20,13 +20,13 @@ newIcon.addEventListener("click", function () {
 saveIcon.addEventListener("click", function (e) {
     // encodes the data of the database by converting into first json string and then into utf-8 sequences
     let stringCode = encodeURIComponent(JSON.stringify(db));
-    let data = "data:text/json;charset=utf-8,"+stringCode;
-    
+    let data = "data:text/json;charset=utf-8," + stringCode;
+
     // creating an anchor element that downloads file when clicked
     let a = document.createElement("a");
     a.href = data;
     a.download = "file.json";
-    
+
     // anchor click
     a.click();
 })
@@ -55,9 +55,9 @@ openFile.addEventListener("change", function (e) {
 })
 
 // sets all the properties on the UI with matching rId and cId (from db -> UI)
-function setUI(){
-    for(let i=1;i<=100;i++){
-        for(let j=1;j<=26;j++){
+function setUI() {
+    for (let i = 1; i <= 100; i++) {
+        for (let j = 1; j <= 26; j++) {
             let cellObj = db[i][j];
             let cellToBeChanged = document.querySelector(`.proper_cell[rId='${i}'][cId='${i}']`);
             // cell properties
@@ -69,7 +69,7 @@ function setUI(){
             cellToBeChanged.style.fontSize = cellObj.fontSize;
             cellToBeChanged.style.fontWeight = cellObj.bold == true ? "bold" : "normal";
             cellToBeChanged.style.fontStyle = cellObj.italic == true ? "italic" : "normal";
-            cellToBeChanged.style.textDecoration = cellObj.undeerline == true ? "underline" : "none";
+            cellToBeChanged.style.textDecoration = cellObj.underline == true ? "underline" : "none";
         }
     }
 }

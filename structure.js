@@ -2,14 +2,9 @@
 let alphabeticHeadingRow = document.querySelector(".alphabetic_heading_row");
 let leftCol = document.querySelector(".left_col");
 let gridItself = document.querySelector(".grid_itself");
-let firstCell = document.querySelector(`.proper_cell[rId='1'][cId='1']`);
 
 //  address element -> contains address of selected cell
 let address = document.querySelector(".address");
-
-// clicking first cell at load
-// firstCell.click();
-// firstCell.focus();
 
 // alphabetic head row
 for (let i = 1; i <= 26; i++) {
