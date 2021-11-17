@@ -17,7 +17,9 @@ function initDB(){
                 italic : "false",
                 underline : "false",
                 bold : "false",
-                value : ""
+                value : "",
+                formula : "",
+                children : []
             }
             dbRow.push(cellObj);
         }
