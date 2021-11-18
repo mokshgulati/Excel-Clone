@@ -59,7 +59,7 @@ function setUI() {
     for (let i = 1; i <= 100; i++) {
         for (let j = 1; j <= 26; j++) {
             let cellObj = db[i][j];
-            let cellToBeChanged = document.querySelector(`.proper_cell[rId='${i}'][cId='${i}']`);
+            let cellToBeChanged = document.querySelector(`.proper_cell[rId='${i}'][cId='${j}']`);
             // cell properties
             cellToBeChanged.innerText = cellObj.value;
             cellToBeChanged.style.color = cellObj.color;

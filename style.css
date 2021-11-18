@@ -39,6 +39,8 @@ body {
     padding-right: 1.2rem;
 }
 
+
+
 .fontFamily_container {
     border-right: 1px solid gray;
 }
@@ -65,6 +67,27 @@ body {
     border-radius: 2px;
 }
 
+.colorFill_container > * {
+    width: 5rem;
+}
+
+.textAlignment_container > * {
+    width: 2.7rem;
+}
+
+.new_open_save_container>*{
+    width: 5rem;
+}
+
+.fontStyle_container>*{
+    width: 3.5rem;
+}
+
+.new_open_save_container>*:hover, .fontStyle_container>*:hover, .textAlignment_container > *:hover, .colorFill_container > *:hover, .font_size:hover, .font_family:hover{
+    cursor:pointer;
+    background-color: #e7e1e1;
+}
+
 .selected {
     box-shadow : 2px 2px 13px #e7e1e1;
     border: 1px solid gray;
@@ -74,8 +97,6 @@ body {
 
 .fas {
     color: #2f3542;
-    padding-right: 20px;
-    padding-left: 20px;
 }
 
 .colorFill_container > * > *, .new_open_save_container > * > * {
@@ -83,12 +104,14 @@ body {
 }
 
 .font_size {
+    height: 1.3rem;
     width: 3rem;
     outline: none;
     border: 0.1px solid gray;
 }
 
 .font_family {
+    height: 1.3rem;
     outline: none;
     border: none;
 }
@@ -199,6 +222,9 @@ body {
     text-align: center;
 }
 
+.proper_cell:hover {
+    cursor: cell;
+}
 
 /*********************************** SHEETS BAR ***************************************/
 
