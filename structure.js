@@ -36,3 +36,42 @@ for (let i = 1; i <= 100; i++) {
     }
     gridItself.appendChild(div);
 }
+
+// array -> editable grid cells
+let cell = document.querySelectorAll(".proper_cell");
+
+// data base
+let db = [];
+
+// putting initial values in the database
+function initDB() {
+    // default value in database (set for every cell)
+    for (let i = 0; i <= 100; i++) {
+        let dbRow = [];
+        for (let j = 0; j <= 26; j++) {
+            let cellObj = {
+                fontFamily: "Courier New",
+                fontSize: 12,
+                textAlign: "center",
+                color: "black",
+                bgColor: "white",
+                italic: false,
+                underline: false,
+                bold: false,
+                value: "",
+                formula: "",
+                children: []
+            }
+            dbRow.push(cellObj);
+        }
+        db.push(dbRow);
+    }
+}
+
+// getting rId and cId from cell address
+function getRidCidFromAddress(address) {
+    let cId = address.charCodeAt(0) - 65 + 1;
+    let rId = Number(address.substring(1));
+
+    return { rId: rId, cId: cId }
+}

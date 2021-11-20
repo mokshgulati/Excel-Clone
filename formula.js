@@ -1,41 +1,65 @@
 // formula input bar
 let formula = document.querySelector(".formula");
 
+// if the value of any (formula) cell is changed manually, it will break the chain
+for(let i=0;i<cell.length;i++){
+    let clickedCell = cell[i];
+    clickedCell.addEventListener("blur", function(e){
+        // new content placed
+        let content = clickedCell.textContent;
+        let addressValue = address.value;
+        let {rId,cId} = getRidCidFromAddress(addressValue);
+        let cellDatabase = db[rId][cId];
+        
+        // if content is same -> do nothing
+        if(cellDatabase.value == content){
+            return;
+        }
+
+        // if content is different -> break chain
+        if(cellDatabase.formula){
+            removeFormula(addressValue, cellDatabase.formula);
+            cellDatabase.formula = "";
+        }
+        displayFormulaResultOnUI(content, rId, cId);
+    })
+}
+
 // when enter is pressed in formula input bar after writing formula
 formula.addEventListener("keydown", (e) => {
-    if(e.key == "Enter" && formula.value !=""){
+    if (e.key == "Enter" && formula.value != "") {
         // formula equation (String)
         let formulaValue = formula.value;
 
         // cell to be edited
         let addressValue = address.value;
-        let {rId,cId} = getRidCidFromAddress(addressValue);
+        let { rId, cId } = getRidCidFromAddress(addressValue);
 
         // database of that cell
         let cellDatabase = db[rId][cId];
 
         // removing old links to the past formula from the database
-        if(cellDatabase.formula != formulaValue){
-            removeFormula(addressValue,cellDatabase.formula);
+        if (cellDatabase.formula != formulaValue) {
+            removeFormula(addressValue, cellDatabase.formula);
         }
         // putting new formula in there
         cellDatabase.formula = formulaValue;
         // setting the formula for that cell (for the formula to function)
-        setFormula(addressValue,formulaValue);
+        setFormula(addressValue, formulaValue);
 
         // changing UI appereance by displaying formula result on that cell
         let value = evaluateFormula(formulaValue);
-        displayFormulaResultOnUI(value,rId,cId);
+        displayFormulaResultOnUI(value, rId, cId);
     }
 })
 
 // basically puts the cell address (that has the formula) into it's parent's database
-function setFormula(address, formula){
+function setFormula(address, formula) {
     let formulaElements = formula.split(" ");
 
-    for(let i=0;i<formulaElements.length;i++){
+    for (let i = 0; i < formulaElements.length; i++) {
         let ascii = formulaElements[i].charCodeAt(0);
-        if(ascii>=65 && ascii <=90){
+        if (ascii >= 65 && ascii <= 90) {
             // extracting (parent) cell elements from formula
             let rIdcId = getRidCidFromAddress(formulaElements[i]);
             let parentObj = db[rIdcId.rId][rIdcId.cId];
@@ -48,20 +72,20 @@ function setFormula(address, formula){
 }
 
 // basically removes the cell address (that has the formula) from it's parent's database
-function removeFormula(address, formula){
+function removeFormula(address, formula) {
     let formulaElements = formula.split(" ");
 
-    for(let i=0;i<formulaElements.length;i++){
+    for (let i = 0; i < formulaElements.length; i++) {
         let ascii = formulaElements[i].charCodeAt(0);
-        if(ascii>=65 && ascii <=90){
+        if (ascii >= 65 && ascii <= 90) {
             // extracting (parent) cell elements from formula
             let rIdcId = getRidCidFromAddress(formulaElements[i]);
             let parentObj = db[rIdcId.rId][rIdcId.cId];
-            
+
             // cutting off the link
             // removing the address of the cell from it's parent's database
             let idx = parentObj.children.indexOf(address);
-            parentObj.children.splice(idx,1);
+            parentObj.children.splice(idx, 1);
         }
     }
 }
@@ -79,7 +103,7 @@ function evaluateFormula(formula) {
             // address -> rId, cId
             let cellRidCid = getRidCidFromAddress(formulaElements[i]);
             // extract value from database
-            let value = db[cellRidCid.rId][cellRidCid.cId];
+            let value = db[cellRidCid.rId][cellRidCid.cId].value;
             // replace in formula -> ( A1 + B1 ) => ( 10 + 20 )
             formula = formula.replace(formulaElements[i], value);
         }

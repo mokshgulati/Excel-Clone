@@ -39,8 +39,6 @@ body {
     padding-right: 1.2rem;
 }
 
-
-
 .fontFamily_container {
     border-right: 1px solid gray;
 }
@@ -116,6 +114,9 @@ body {
     border: none;
 }
 
+.open_file {
+    display: none;
+}
 
 /*********************************** FORMULA BAR **************************************/
 
@@ -229,13 +230,54 @@ body {
 /*********************************** SHEETS BAR ***************************************/
 
 .sheet_container {
-    height: 2.5rem;
-    background-color: rgb(141, 141, 141);
+    padding-top: 0.2rem;
+    height: 4.5rem;
+    display: flex;
+    background-color: #e7e1e1;
 }
 
+.fa-plus-circle {
+    font-size: 1.65rem;
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-left: 0.2rem;
+    border-radius: 4px;
+}
+.fa-plus-circle:hover{
+    cursor:pointer;
+}
 
-/************************************ MENU BAR ****************************************/
+.sheets_list {
+    display: flex;
+    height: 1.5rem;
+}
 
-.open_file {
-    display: none;
+.sheet {
+    background-color: aliceblue;
+    border-radius: 3px;
+    margin-left: 0.3rem;
+    height: 1.4rem;
+    width: 4.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #2f3542;
+    font-size: 0.8rem;
+    border: 2px solid #2f3542;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 0.2rem;
+    padding-top: 0.25rem;
+}
+
+.sheet:hover {
+    cursor: pointer;
+    background-color: #e7e1e1;
+}
+
+.active_sheet {
+    border-right-width: 10px;
+    border-top-width: 6px;
+    padding-top: 0px;
 }

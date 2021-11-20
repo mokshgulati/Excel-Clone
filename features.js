@@ -1,10 +1,3 @@
-// array -> editable grid cells
-let cell = document.querySelectorAll(".proper_cell");
-
-// first cell
-let firstCell = document.querySelector(".proper_cell[rId='1'][cId='1']");
-
-
 // If any of the cell is clicked
 for (let i = 0; i < cell.length; i++) {
     let clickedCell = cell[i];
@@ -82,3 +75,12 @@ for (let i = 0; i < cell.length; i++) {
         formula.value = cellObj.formula;
     })
 }
+
+// initialize database to its initial value
+initDB();
+
+// first cell
+let firstCell = document.querySelector(".proper_cell[rId='1'][cId='1']");
+// clicking first cell at load
+firstCell.click();
+firstCell.focus();
