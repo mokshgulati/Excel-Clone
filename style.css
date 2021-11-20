@@ -246,11 +246,15 @@ body {
     margin-left: 0.2rem;
     border-radius: 4px;
 }
+
 .fa-plus-circle:hover{
     cursor:pointer;
+    font-size: 1.8rem;
 }
 
 .sheets_list {
+    position: fixed;
+    left: 5rem;
     display: flex;
     height: 1.5rem;
 }
