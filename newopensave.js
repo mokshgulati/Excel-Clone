@@ -16,14 +16,17 @@ newIcon.addEventListener("click", function () {
     // map UI -> according to db
     setUI();
 
+    // bring sheet buttons on the UI
     configureSheetBar();
 })
 
+// create sheet buttons equal to the no. of sheets in the sheets database
 function configureSheetBar() {
     sheetsList.innerHTML = "";
-    for(let i=0;i<sheetsDb.length;i++){
+    for (let i = 0; i < sheetsDb.length; i++) {
         sheetButtonAdder();
     }
+    // clicks first sheet button
     sheetsList.children[0].click();
 }
 
@@ -58,10 +61,13 @@ openFile.addEventListener("change", function (e) {
     let fileReader = new FileReader();
     fileReader.readAsText(file);
     fileReader.addEventListener("load", (event) => {
-        // data in the file => event.tarhet.result
+        // data in the file => event.target.result
         let jsonData = JSON.parse(event.target.result);
+        // putting data into the database
         sheetsDb = jsonData;
         db = sheetsDb[0];
+
+        // configuring UI according to the database
         setUI();
         configureSheetBar();
     })

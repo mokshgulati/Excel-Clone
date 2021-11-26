@@ -2,22 +2,22 @@
 let formula = document.querySelector(".formula");
 
 // if the value of any (formula) cell is changed manually, it will break the chain
-for(let i=0;i<cell.length;i++){
+for (let i = 0; i < cell.length; i++) {
     let clickedCell = cell[i];
-    clickedCell.addEventListener("blur", function(e){
+    clickedCell.addEventListener("blur", function (e) {
         // new content placed
         let content = clickedCell.textContent;
         let addressValue = address.value;
-        let {rId,cId} = getRidCidFromAddress(addressValue);
+        let { rId, cId } = getRidCidFromAddress(addressValue);
         let cellDatabase = db[rId][cId];
-        
+
         // if content is same -> do nothing
-        if(cellDatabase.value == content){
+        if (cellDatabase.value == content) {
             return;
         }
 
         // if content is different -> break chain
-        if(cellDatabase.formula){
+        if (cellDatabase.formula) {
             removeFormula(addressValue, cellDatabase.formula);
             cellDatabase.formula = "";
         }

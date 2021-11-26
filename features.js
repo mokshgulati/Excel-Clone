@@ -76,9 +76,8 @@ for (let i = 0; i < cell.length; i++) {
     })
 }
 
-// first cell
-// let firstCell = document.querySelector(".proper_cell[rId='1'][cId='1']");
 // clicking first cell at load
 firstCell.click();
 firstCell.focus();
+// clicking first sheet at load
 sheet.click();
