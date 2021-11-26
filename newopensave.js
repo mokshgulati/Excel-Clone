@@ -10,7 +10,7 @@ newIcon.addEventListener("click", function () {
     // seting database to empty
     db = [];
     // taking db to its initial state
-    initDB();
+    initDb();
 
     // map UI -> according to db
     setUI();

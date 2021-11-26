@@ -41,11 +41,12 @@ for (let i = 1; i <= 100; i++) {
 let cell = document.querySelectorAll(".proper_cell");
 
 // data base
-let db = [];
+let sheetsDb = [];
 
 // putting initial values in the database
-function initDB() {
+function initDb() {
     // default value in database (set for every cell)
+    let db = [];
     for (let i = 0; i <= 100; i++) {
         let dbRow = [];
         for (let j = 0; j <= 26; j++) {
@@ -66,6 +67,7 @@ function initDB() {
         }
         db.push(dbRow);
     }
+    sheetsDb.push(db);
 }
 
 // getting rId and cId from cell address

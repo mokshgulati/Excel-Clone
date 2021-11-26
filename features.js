@@ -77,7 +77,8 @@ for (let i = 0; i < cell.length; i++) {
 }
 
 // initialize database to its initial value
-initDB();
+initDb();
+let db = sheetsDb[0];
 
 // first cell
 let firstCell = document.querySelector(".proper_cell[rId='1'][cId='1']");
